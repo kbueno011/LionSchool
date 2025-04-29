@@ -11,4 +11,10 @@
     <string name="Get_Started">Get Started</string>
     <string name="your_course">Find your course</string>
     <string name="find_course">Find a student</string>
+    <string name="find_student">Find a student"</string>
+    <string name="ds">DS</string>
+    <string name="todos">Todos</string>
+    <string name="finalizado">Finalizado</string>
+    <string name="cursando">Cursando</string>
+    <string name="students_list">Students List</string>
 </resources>

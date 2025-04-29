@@ -1,8 +1,18 @@
-package br.senai.sp.jandira.myschool.screens
+package br.senai.sp.jandira.lionschool.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -15,128 +25,152 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.lionschool.R
 
 @Composable
-fun TelaInicial() {
+fun TelaInicial(modifier: Modifier = Modifier){
+
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
-    ) {
-        Column(
+            .background(
+                color = Color.White
+            )
+    ){
+        Column (
             modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 50.dp),
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+            verticalArrangement = Arrangement.SpaceAround
+        ){
             Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 25.dp
+                    )
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.logo),
-                    contentDescription = stringResource(R.string.logo_description),
+                    contentDescription = "",
                     modifier = Modifier
-                        .width(130.dp)
-                        .height(300.dp)
+                        .width(150.dp)
+                        .height(150.dp)
                 )
                 Text(
                     text = stringResource(R.string.lion_School),
-                    modifier = Modifier.width(150.dp),
+                    color = colorResource(R.color.cor_logo),
                     fontSize = 40.sp,
-                    color = colorResource(R.color.cor_logo)
-
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .width(150.dp)
+                        .padding(top = 20.dp)
                 )
             }
-            Column(
+            Column (
+                modifier = Modifier
+                    .padding(23.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
                     text = stringResource(R.string.favorite_course),
-                    fontSize = 20.sp,
                     color = colorResource(R.color.cor_logo),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 27.sp,
                     modifier = Modifier
                         .padding(bottom = 10.dp)
                 )
                 Card(
-
                     modifier = Modifier
-                        .height(5.dp)
-                        .width(70.dp),
-                    colors = CardDefaults.cardColors(colorResource(R.color.dark_yellow))
-                ){
-                }
-                Spacer(modifier = Modifier.height(26.dp))
+                        .width(70.dp)
+                        .height(7.dp),
+                    shape = RoundedCornerShape(20.dp),
+                    colors = CardDefaults.cardColors(
+                        colorResource(R.color.dark_yellow)
+                    )
+                ){}
                 Text(
-                    text = stringResource(R.string.destinations),
-                    fontSize = 21.sp,
-                    color = colorResource(R.color.Light_gray),
+                    text = stringResource(R.string.logo_description),
+                    color = Color.Gray,
                     modifier = Modifier
-                        .padding(horizontal = 30.dp)
+                        .padding(top = 30.dp),
+                    fontSize = 18.sp,
+                    textAlign = TextAlign.Center
                 )
+
             }
-            Spacer(modifier = Modifier.height(150.dp))
             Button(
                 onClick = {},
                 modifier = Modifier
-                    .padding(horizontal = 45.dp)
-                    .width(300.dp)
-                    .height(40.dp),
-                colors = ButtonDefaults.buttonColors(colorResource(R.color.dark_yellow)),
-
-                ) {
+                    .fillMaxWidth()
+                    .height(50.dp)
+                    .padding(
+                        start = 30.dp,
+                        end = 30.dp
+                    ),
+                shape = RoundedCornerShape(15.dp),
+                colors = ButtonDefaults.buttonColors(
+                    colorResource(R.color.dark_yellow)
+                ),
+                border = BorderStroke(
+                    width = 2.dp,
+                    color = colorResource(R.color.cor_logo)
+                )
+            ) {
                 Text(
                     text = stringResource(R.string.Get_Started),
-                    color = Color.Black
-
+                    color = colorResource(R.color.cor_logo),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp
                 )
             }
-            Spacer(modifier = Modifier.height(80.dp))
             Row (
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(start = 50.dp, end = 50.dp),
+                    .fillMaxWidth()
+                    .padding(start = 55.dp, end = 55.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
-            ){
+            ) {
                 Image(
                     painter = painterResource(R.drawable.youtube),
-                    contentDescription = stringResource(R.string.youtube),
+                    contentDescription = "",
                     modifier = Modifier
-                        .width(33.dp)
-                        .height(33.dp)
+                        .width(30.dp)
+                        .height(30.dp)
                 )
                 Image(
                     painter = painterResource(R.drawable.twitter),
-                    contentDescription = stringResource(R.string.twitter),
+                    contentDescription = "",
                     modifier = Modifier
-                        .width(33.dp)
-                        .height(33.dp)
+                        .width(30.dp)
+                        .height(30.dp)
                 )
                 Image(
                     painter = painterResource(R.drawable.instagran),
-                    contentDescription = stringResource(R.string.instagram),
+                    contentDescription = "",
                     modifier = Modifier
-                        .width(33.dp)
-                        .height(33.dp)
+                        .width(30.dp)
+                        .height(30.dp)
                 )
                 Image(
                     painter = painterResource(R.drawable.facebook),
-                    contentDescription = stringResource(R.string.facebook),
+                    contentDescription = "",
                     modifier = Modifier
-                        .width(33.dp)
-                        .height(33.dp)
+                        .width(30.dp)
+                        .height(30.dp)
                 )
             }
         }
     }
+
 }
 
-@Preview(showSystemUi = true)
+@Preview(showSystemUi =  true)
 @Composable
-private fun TelaInicialPreview() {
-    TelaInicial()
+private fun TelaInicialPreview(){
+    TelaInicial(modifier = Modifier)
 }
